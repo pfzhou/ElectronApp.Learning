@@ -1,9 +1,11 @@
-global.$ = $;
+//global.$ = $;
 
 var abar = require('address_bar');
 var folder_view = require('folder_view');
-var path = require('path');
-//var shell = require('app').Shell;
+
+var shell = require('shell');
+var remote = require('remote');
+var BrowserWindow = remote.require('browser-window');
 
 $(document).ready(function() {
   var folder = new folder_view.Folder($('#files'));
@@ -16,7 +18,7 @@ $(document).ready(function() {
     if (mime.type == 'folder') {
       addressbar.enter(mime);
     } else {
-      //shell.openItem(mime.path);
+      shell.openItem(mime.path);
     }
   });
 

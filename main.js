@@ -17,14 +17,14 @@ app.on('window-all-closed', function() {
 });
 
 //创建状态栏右键菜单
-app.setUserTasks([{
-  program: process.execPath,
-  arguments: '--new-window',
-  iconPath: process.execPath,
-  iconIndex: 0,
-  title: 'New Window',
-  description: 'Create a new winodw',
-}]);
+// app.setUserTasks([{
+//   program: process.execPath,
+//   arguments: '--new-window',
+//   iconPath: process.execPath,
+//   iconIndex: 0,
+//   title: 'New Window',
+//   description: 'Create a new winodw',
+// }]);
 
 // This method will be called when Electron has done everything
 // initialization and ready for creating browser windows.
@@ -37,7 +37,7 @@ app.on('ready', function() {
 
   // and load the index.html of the app.
   // mainWindow.loadUrl('file://' + __dirname + '/index.html');
-  mainWindow.loadUrl('file://' + __dirname + '/file-explorer/index.html');
+  mainWindow.loadUrl('file://' + __dirname + '/file-explorer//index.html');
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {

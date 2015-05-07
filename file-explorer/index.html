@@ -18,10 +18,14 @@
       <li><a href="#"><i class="icon-picture"></i> Pictures</a></li>
       <li class="nav-header">Network</li>
       <li class="divider"></li>
-      <li><a href="#"><i class="icon-flag"></i> About</a></li>
+      <li><a href="#" onclick='openDevTool();'><i class="icon-flag"></i> About</a></li>
     </ul>
   </div>
-
+<script>
+var openDevTool = function(){
+  remote.getCurrentWindow().toggleDevTools();
+}
+</script>
   <div style="float: left; position: absolute; left: 210px; right: 0; top: 0; bottom: 50px">
     <div class="row">
       <ul id="addressbar" class="breadcrumb"></ul>
