@@ -4,7 +4,7 @@ var ipc = require('ipc');
 var onlineStatusWindow;
 
 // Report crashes to our server.
-require('crash-reporter').start();
+//require('crash-reporter').start();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the javascript object is GCed.
@@ -36,7 +36,8 @@ app.on('ready', function() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  // mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  mainWindow.loadUrl('file://' + __dirname + '/file-explorer/index.html');
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
@@ -45,14 +46,14 @@ app.on('ready', function() {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
-  onlineStatusWindow = new BrowserWindow({
-    width: 0,
-    height: 0,
-    show: false
-  });
-  onlineStatusWindow.loadUrl('file://' + __dirname + '/online-status.html');
+  // onlineStatusWindow = new BrowserWindow({
+  //   width: 0,
+  //   height: 0,
+  //   show: false
+  // });
+  // onlineStatusWindow.loadUrl('file://' + __dirname + '/online-status.html');
 });
 
-ipc.on('online-status-changed', function(event, status) {
-  console.log(status);
-});
+// ipc.on('online-status-changed', function(event, status) {
+//   console.log(status);
+// });

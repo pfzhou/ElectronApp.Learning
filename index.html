@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using io.js <script>document.write(process.version)</script>
-    and Electron <script>document.write(process.versions['electron'])</script>.
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello World!</title>
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  We are using io.js
+  <script>
+    document.write(process.version)
+  </script>
+  and Electron
+  <script>
+    document.write(process.versions['electron'])
+  </script>.
+
+  <script>
+    if (window.localStorage) {
+      alert("浏览支持localStorage");
+      //window.localStorage
+      var storage = window.localStorage;
+      for (var i = 0, len = storage.length; i < len; i++) {
+        var key = storage.key(i);
+        var value = storage.getItem(key);
+        // console.log(key + "=" + value);
+        alert(key + "=" + value);
+      }
+      storage.a = 'abc';
+      storage.b = 123;
+    }
+    else {
+      alert("浏览暂不支持localStorage")
+    }
+  </script>
+</body>
+
 </html>
